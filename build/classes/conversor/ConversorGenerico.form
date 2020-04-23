@@ -32,8 +32,8 @@
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jTextFieldCent" min="-2" pref="112" max="-2" attributes="0"/>
-                          <Component id="jTextFieldPul" min="-2" pref="112" max="-2" attributes="0"/>
+                          <Component id="jTextFieldValor1" min="-2" pref="112" max="-2" attributes="0"/>
+                          <Component id="jTextFieldValor2" min="-2" pref="112" max="-2" attributes="0"/>
                           <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
@@ -56,14 +56,14 @@
               <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-              <Component id="jTextFieldCent" min="-2" max="-2" attributes="0"/>
+              <Component id="jTextFieldValor1" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
                   <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                   <Component id="jButtonConvertir" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="jTextFieldPul" min="-2" max="-2" attributes="0"/>
+              <Component id="jTextFieldValor2" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="57" max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -75,13 +75,13 @@
         <Property name="text" type="java.lang.String" value="Valor 1"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextFieldCent">
+    <Component class="javax.swing.JTextField" name="jTextFieldValor1">
       <Properties>
         <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>
       <Events>
-        <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jTextFieldCentFocusLost"/>
-        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jTextFieldCentKeyPressed"/>
+        <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jTextFieldValor1FocusLost"/>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jTextFieldValor1KeyPressed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jButtonConvertir">
@@ -97,10 +97,10 @@
         <Property name="text" type="java.lang.String" value="Valor 2"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextFieldPul">
+    <Component class="javax.swing.JTextField" name="jTextFieldValor2">
       <Events>
-        <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jTextFieldPulFocusLost"/>
-        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jTextFieldPulKeyPressed"/>
+        <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jTextFieldValor2FocusLost"/>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jTextFieldValor2KeyPressed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JComboBox" name="jComboBoxConversores">

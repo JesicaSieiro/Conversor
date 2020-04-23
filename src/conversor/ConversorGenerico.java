@@ -62,25 +62,25 @@ public class ConversorGenerico extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jTextFieldCent = new javax.swing.JTextField();
+        jTextFieldValor1 = new javax.swing.JTextField();
         jButtonConvertir = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        jTextFieldPul = new javax.swing.JTextField();
+        jTextFieldValor2 = new javax.swing.JTextField();
         jComboBoxConversores = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("Valor 1");
 
-        jTextFieldCent.setToolTipText("");
-        jTextFieldCent.addFocusListener(new java.awt.event.FocusAdapter() {
+        jTextFieldValor1.setToolTipText("");
+        jTextFieldValor1.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
-                jTextFieldCentFocusLost(evt);
+                jTextFieldValor1FocusLost(evt);
             }
         });
-        jTextFieldCent.addKeyListener(new java.awt.event.KeyAdapter() {
+        jTextFieldValor1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                jTextFieldCentKeyPressed(evt);
+                jTextFieldValor1KeyPressed(evt);
             }
         });
 
@@ -93,14 +93,14 @@ public class ConversorGenerico extends javax.swing.JFrame {
 
         jLabel2.setText("Valor 2");
 
-        jTextFieldPul.addFocusListener(new java.awt.event.FocusAdapter() {
+        jTextFieldValor2.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
-                jTextFieldPulFocusLost(evt);
+                jTextFieldValor2FocusLost(evt);
             }
         });
-        jTextFieldPul.addKeyListener(new java.awt.event.KeyAdapter() {
+        jTextFieldValor2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                jTextFieldPulKeyPressed(evt);
+                jTextFieldValor2KeyPressed(evt);
             }
         });
 
@@ -122,8 +122,8 @@ public class ConversorGenerico extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextFieldCent, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextFieldPul, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldValor1, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldValor2, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel1))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
@@ -140,13 +140,13 @@ public class ConversorGenerico extends javax.swing.JFrame {
                 .addGap(35, 35, 35)
                 .addComponent(jLabel1)
                 .addGap(20, 20, 20)
-                .addComponent(jTextFieldCent, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jTextFieldValor1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(19, 19, 19)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel2)
                     .addComponent(jButtonConvertir))
                 .addGap(18, 18, 18)
-                .addComponent(jTextFieldPul, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jTextFieldValor2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(57, Short.MAX_VALUE))
         );
 
@@ -165,7 +165,7 @@ public class ConversorGenerico extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonConvertirActionPerformed
 
     private void convertirAValor1() throws HeadlessException {
-        String pulgText = jTextFieldPul.getText().replace(",", ".");
+        String pulgText = jTextFieldValor2.getText().replace(",", ".");
         Double pulg;
         try {
             pulg = Double.valueOf(pulgText);
@@ -174,12 +174,12 @@ public class ConversorGenerico extends javax.swing.JFrame {
             return ;
         }
         Double cent = conversorSeleccionado.convertirValor2Valor1(pulg);
-        jTextFieldCent.setText(String.format("%.2f", cent));
+        jTextFieldValor1.setText(String.format("%.2f", cent));
         
     }
 
     private void convertirAValor2() throws HeadlessException {
-        String centText = jTextFieldCent.getText().replace(",", ".");
+        String centText = jTextFieldValor1.getText().replace(",", ".");
         Double cent;
         try {
             cent = Double.valueOf(centText);
@@ -189,35 +189,41 @@ public class ConversorGenerico extends javax.swing.JFrame {
         }
         Double pulg = conversorSeleccionado.convertirValor1Valor2(cent);
         //System.out.println(pulg);
-        jTextFieldPul.setText(String.format("%.2f", pulg));
+        jTextFieldValor2.setText(String.format("%.2f", pulg));
         
     }
+    
+     public void clearTxtField() {
+        jTextFieldValor1.setText(null);
+        jTextFieldValor2.setText(null);
+    }
   
-    private void jTextFieldCentFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextFieldCentFocusLost
+    private void jTextFieldValor1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextFieldValor1FocusLost
         convertirValor1=true;
-    }//GEN-LAST:event_jTextFieldCentFocusLost
+    }//GEN-LAST:event_jTextFieldValor1FocusLost
 
-    private void jTextFieldPulFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextFieldPulFocusLost
+    private void jTextFieldValor2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextFieldValor2FocusLost
         convertirValor1=false;
-    }//GEN-LAST:event_jTextFieldPulFocusLost
+    }//GEN-LAST:event_jTextFieldValor2FocusLost
 
-    private void jTextFieldCentKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldCentKeyPressed
+    private void jTextFieldValor1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldValor1KeyPressed
         if (evt.getKeyChar() == KeyEvent.VK_ENTER) {
             convertirAValor2();
         }
-    }//GEN-LAST:event_jTextFieldCentKeyPressed
+    }//GEN-LAST:event_jTextFieldValor1KeyPressed
 
-    private void jTextFieldPulKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldPulKeyPressed
+    private void jTextFieldValor2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldValor2KeyPressed
         if (evt.getKeyChar() == KeyEvent.VK_ENTER) {
             convertirAValor1();
         }
-    }//GEN-LAST:event_jTextFieldPulKeyPressed
+    }//GEN-LAST:event_jTextFieldValor2KeyPressed
 
     private void jComboBoxConversoresItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBoxConversoresItemStateChanged
         int selectedIndex= jComboBoxConversores.getSelectedIndex();
         jLabel1.setText(conversores.get(selectedIndex).getLabelValor1());
         jLabel2.setText(conversores.get(selectedIndex).getLableValor2());
         conversorSeleccionado=conversores.get(selectedIndex);
+        clearTxtField();
     }//GEN-LAST:event_jComboBoxConversoresItemStateChanged
 
     /**
@@ -261,7 +267,7 @@ public class ConversorGenerico extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBoxConversores;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JTextField jTextFieldCent;
-    private javax.swing.JTextField jTextFieldPul;
+    private javax.swing.JTextField jTextFieldValor1;
+    private javax.swing.JTextField jTextFieldValor2;
     // End of variables declaration//GEN-END:variables
 }
