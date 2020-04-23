@@ -30,12 +30,12 @@ public class PesosDolarConversor extends Conversor {
 
     @Override
     public Double convertirValor1Valor2(Double valor1) {
-        return valor1 * CONSTANTE_PESOS_DOLAR;
+        return valor1 / CONSTANTE_PESOS_DOLAR;
     }
 
     @Override
     public Double convertirValor2Valor1(Double valor2) {
-        return valor2 / CONSTANTE_PESOS_DOLAR;
+        return valor2 * CONSTANTE_PESOS_DOLAR;
     }
 
 
